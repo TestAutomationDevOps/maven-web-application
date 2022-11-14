@@ -1,16 +1,16 @@
 pipeline
 {
-  agent any
+    agent any
   
-  tools
-  {
-    maven 'Maven_8.6.4'
-  }
+    tools
+    {
+      maven 'Maven_8.6.4'
+    }
   
-   environment
-   {
+    environment
+    {
        Build_Number = "${BUILD_NUMBER}"
-   {
+    }
   
   stages
   {
@@ -39,4 +39,3 @@ pipeline
     }
   }
 }
-   }
