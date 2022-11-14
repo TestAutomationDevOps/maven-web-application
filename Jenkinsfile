@@ -24,5 +24,14 @@ pipeline
           sh 'mvn clean package'
       }
     }
+    
+    stage('Build Docker Image')
+    {
+       steps()
+      {
+          sh 'docker build -t testautomationdevops/maven-kubernetes:1 .'
+      }
+    }
+    
   }
 }
