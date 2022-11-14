@@ -37,5 +37,13 @@ pipeline
           sh "docker build -t 873892298042.dkr.ecr.ap-south-1.amazonaws.com/mavenwebapplication:$Build_Number ."
       }
     }
+      
+      stage('Push Docker Image')
+    {
+       steps()
+      {
+          sh "docker push 873892298042.dkr.ecr.ap-south-1.amazonaws.com/mavenwebapplication:$Build_Number"
+      }
+    }
   }
 }
