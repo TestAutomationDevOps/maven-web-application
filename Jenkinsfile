@@ -11,5 +11,13 @@ pipeline
           git 'https://github.com/TestAutomationDevOps/maven-web-application.git'
       }
     }
+    
+    stage('Build Project')
+    {
+       steps()
+      {
+          sh 'mvn clean package'
+      }
+    }
   }
 }
