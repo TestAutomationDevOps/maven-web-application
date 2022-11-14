@@ -8,7 +8,7 @@ pipeline
     {
        steps()
       {
-          
+          git 'https://github.com/TestAutomationDevOps/maven-web-application.git'
       }
     }
   }
