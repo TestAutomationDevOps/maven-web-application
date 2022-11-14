@@ -7,6 +7,11 @@ pipeline
     maven 'Maven_8.6.4'
   }
   
+   environment
+   {
+       Build_Number = "${BUILD_NUMBER}"
+   {
+  
   stages
   {
      stage('Git Checkout')
@@ -29,7 +34,7 @@ pipeline
     {
        steps()
       {
-          sh 'docker build -t testautomationdevops/maven-kubernetes:1 .'
+          sh 'docker build -t 873892298042.dkr.ecr.ap-south-1.amazonaws.com/mavenwebapplication:$Build_Number .'
       }
     }
     
