@@ -46,5 +46,10 @@ pipeline
           sh "docker push 873892298042.dkr.ecr.ap-south-1.amazonaws.com/mavenwebapplication:$Build_Number"
       }
     }
+      
+    stage("Deploy Application in Kubernetes Cluster using Jenkins")
+    {
+        sh 'kubectl apply -f springBootMongo.yml'
+    }
   }
 }
