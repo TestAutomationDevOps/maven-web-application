@@ -53,7 +53,7 @@ pipeline
             {
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'KubeConfig_Production', namespace: '', serverUrl: '')
                 {
-                   sh 'kubectl apply -f SpringBootMongo_PrivateRepository.yml'
+                   sh 'kubectl apply -f mavenwebappdeployment.yaml'
                 }
             }
         }
