@@ -53,7 +53,10 @@ pipeline
             {
                 withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'KubeConfig', namespace: '', serverUrl: '')
                 {
-                   sh 'kubectl apply -f mavenwebappdeployment.yaml'
+                   sh 'curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"'
+                   sh 'chmod u+x ./kubectl'  
+                   sh './kubectl get pods'
+                   //sh 'kubectl apply -f mavenwebappdeployment.yaml'
                 }
             }
         }
