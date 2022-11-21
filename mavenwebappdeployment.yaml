@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mavenwebappdeployment
+  namespace: development
 spec:
   revisionHistoryLimit: 10
   replicas: 2
@@ -36,7 +37,7 @@ metadata:
 spec:
   selector:
     app: mavenwebapp
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
     targetPort: 8080
