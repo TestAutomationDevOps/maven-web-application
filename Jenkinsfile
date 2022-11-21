@@ -47,9 +47,16 @@ pipeline
       }
     }
       
-    stage("Deploy Application in Kubernetes Cluster using Jenkins")
-    {
-        sh 'kubectl apply -f springBootMongo.yml'
-    }
+    stage("Deploy Application in Kubernetes Cluster")
+        {
+            steps
+            {
+                withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'KubeConfig_Production', namespace: '', serverUrl: '')
+                {
+                   sh 'kubectl apply -f SpringBootMongo_PrivateRepository.yml'
+                }
+            }
+        }
+
   }
 }
