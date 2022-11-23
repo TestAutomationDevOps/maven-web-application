@@ -46,6 +46,16 @@ pipeline
           sh "docker push 873892298042.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:$Build_Number"
       }
     }
-
+      
+      stage()
+      {
+          steps()
+          {
+              withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'Kubernetes', namespace: '', serverUrl: '')
+              {
+                  sh ""
+                }
+            }
+        }
   }
 }
