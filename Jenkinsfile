@@ -51,7 +51,7 @@ pipeline
       {
           steps()
           {
-              withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'Kubernetes', namespace: '', serverUrl: '')
+              withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8s', namespace: '', serverUrl: '')
               {
                   sh 'kubectl apply -f mavenwebappdeployment.yaml'
               }
