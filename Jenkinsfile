@@ -53,7 +53,7 @@ pipeline
           {
               withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'Kubernetes', namespace: '', serverUrl: '')
               {
-                  sh ""
+                  sh "kubectl apply -f mavenwebappdeployment.yaml"
                 }
             }
         }
