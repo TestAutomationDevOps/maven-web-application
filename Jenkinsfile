@@ -47,15 +47,16 @@ pipeline
       }
     }
       
-      stage()
+      stage('Deploy')
       {
           steps()
           {
               withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'Kubernetes', namespace: '', serverUrl: '')
               {
                   sh "kubectl apply -f mavenwebappdeployment.yaml"
-                }
-            }
-        }
+              }
+          }
+      }
+      
   }
 }
