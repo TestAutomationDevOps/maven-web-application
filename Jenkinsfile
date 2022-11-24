@@ -51,11 +51,9 @@ pipeline
 		{
 			steps()
 			{
-				withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8s', namespace: '', serverUrl: '')
-				{
-					sh 'kubectl delete deployment mavenwebapplication-deployment -n test || true'
-					sh 'kubectl apply -f mavenwebappdeployment.yaml'
-				}
+				
+				sh 'kubectl delete deployment mavenwebapplication-deployment -n test || true'
+				sh 'kubectl apply -f mavenwebappdeployment.yaml'
 			}
 		}
 	}
