@@ -51,6 +51,8 @@ pipeline
         	{
             		steps
             		{
+				//Build_Tag - To Be Added in Manifest File Registry/ImageName:Build_Tag
+				//Build_Number - Parameterised Build Number.
                 		sh "sed -i 's/Build_Tag/${Build_Number}/g' mavenwebappdeployment.yaml"
             		}
         	}
