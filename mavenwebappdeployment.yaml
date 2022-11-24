@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: mavenwebapplication-container
-          image: testautomationdevops/maven-web-application:1
+          image: 873892298042.dkr.ecr.ap-south-1.amazonaws.com/java-maven-application:7
           ports:
             - containerPort: 8080
           resources:
