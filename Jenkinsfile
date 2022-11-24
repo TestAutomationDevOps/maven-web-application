@@ -47,6 +47,14 @@ pipeline
 			}
 		}
 		
+		stage("Update Image Tag in Kubernetes Manifest")
+        	{
+            		steps
+            		{
+                		sh "sed -i 's/Build_Tag/${Build_Number}/g' mavenwebappdeployment.yaml"
+            		}
+        	}
+		
 		stage('Deploy')
 		{
 			steps()
