@@ -57,7 +57,7 @@ pipeline
             		}
         	}
 		
-		stage('Deploy')
+		stage('Deploy Application in EKS Kubernetes Cluster')
 		{
 			steps()
 			{
